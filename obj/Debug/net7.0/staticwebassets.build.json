@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "OrnO4+aCHyLpP7EnyRIY870Hmi/E7N5k1IVh+DBZEgo=",
+  "Source": "ReservationAppApi",
+  "BasePath": "_content/ReservationAppApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
