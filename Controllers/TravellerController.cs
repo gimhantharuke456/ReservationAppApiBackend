@@ -44,6 +44,11 @@ namespace ReservationAppApi.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(Traveler traveler)
         {
+            var user = _travelerService.GetByNICAsync(traveler.NIC);
+            if (user != null)
+            {
+                return BadRequest("User already exits with this nic");
+            }
             await _travelerService.CreateTraveler(traveler);
             return CreatedAtAction(nameof(Get), new { id = traveler.Id }, traveler);
         }

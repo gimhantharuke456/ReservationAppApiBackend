@@ -43,6 +43,11 @@ namespace ReservationAppApi.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(User user)
         {
+            var u = await _userService.GetUserByNic(user.NIC);
+            if (u != null)
+            {
+                return BadRequest("User already exists with this nic");
+            }
             await _userService.CreateUser(user);
             return CreatedAtAction(nameof(Get), new { id = user.Id }, user);
         }

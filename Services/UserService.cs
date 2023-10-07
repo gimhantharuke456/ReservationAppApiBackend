@@ -36,5 +36,10 @@ namespace ReservationAppApi.Services
             var filter = Builders<User>.Filter.Eq(u => u.NIC, username) & Builders<User>.Filter.Eq(u => u.Password, password);
             return await _userCollection.Find(filter).FirstOrDefaultAsync();
         }
+        public async Task<User> GetUserByNic(string username)
+        {
+            var filter = Builders<User>.Filter.Eq(u => u.NIC, username);
+            return await _userCollection.Find(filter).FirstOrDefaultAsync();
+        }
     }
 }
